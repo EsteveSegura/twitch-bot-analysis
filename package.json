@@ -1,0 +1,32 @@
+{
+  "name": "twitch-bot-analysis",
+  "version": "0.0.1",
+  "description": "bot detector for twitch",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EsteveSegura/twitch-bot-analysis.git"
+  },
+  "keywords": [
+    "bot",
+    "twitch",
+    "detector"
+  ],
+  "author": "GiR",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EsteveSegura/twitch-bot-analysis/issues"
+  },
+  "homepage": "https://github.com/EsteveSegura/twitch-bot-analysis#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
+    "dotenv": "^8.2.0",
+    "lodash": "^4.17.15",
+    "puppeteer": "^2.1.1",
+    "tmi.js": "^1.5.0"
+  }
+}
