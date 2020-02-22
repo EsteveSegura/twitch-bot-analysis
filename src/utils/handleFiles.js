@@ -1,6 +1,5 @@
 const fs = require('fs');
 
-
 function readJsonFile(path){
     return new Promise((resolve, reject) => {
         fs.readFile(path, (err,data) =>{
@@ -19,6 +18,5 @@ function writeJsonFile(path,data){
         
     });  
 }
-
 
 module.exports = { readJsonFile, writeJsonFile };

@@ -1,5 +1,6 @@
 const axios = require('axios');
 
+
 async function getApiData(userTwitch) {
     let getData = await axios.get(`https://tmi.twitch.tv/group/user/${userTwitch}/chatters`);
     return getData
@@ -15,6 +16,13 @@ async function streamerIsOnline(userTwitch) {
     let getId = await axios.get(`https://api.twitch.tv/kraken/users/?login=${userTwitch}`, headers)
     let getViews = await axios.get(`https://api.twitch.tv/helix/streams?user_id=${getId.data.users[0]._id}`, headers)
     
+    let date = new Date().getMinutes()
+    //console.log(date)
+
+   /*if(date == 20){
+        return false
+    }*/
+
     if(getViews.data.data.length == 0){
         return false
     }else{
