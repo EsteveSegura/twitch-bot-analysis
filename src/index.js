@@ -65,6 +65,8 @@ function setStatus(status){
     lastStatus = status;
 }
 
+console.log("The first logs will start in 5 minutes")
+
 setInterval(async () => {
     let statusUser = await apiActions.streamerIsOnline(twitchUserTarget);
     
