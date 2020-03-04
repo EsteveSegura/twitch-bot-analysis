@@ -8,7 +8,7 @@ function sleep(s) {
     });
 }
 
-async function takeScreenshotAndGetCounter(userTwitch) {
+async function takeScreenshotAndGetCounter(userTwitch,takeScreen) {
     return new Promise(async(resolve, reject) => {
         let actualDate = new Date().getTime();
         const browser = await puppeteer.launch({ 'headless': true });
@@ -17,7 +17,9 @@ async function takeScreenshotAndGetCounter(userTwitch) {
         await page.goto(`http://twitch.tv/${userTwitch}`);
         await page.setViewport({ 'width': 1024, 'height': 800 });
         await sleep(15)
-        await page.screenshot({ 'path': `./data/screenshot_${userTwitch}_${actualDate}.jpg`, 'fullPage': true });
+        if(takeScreen){
+            await page.screenshot({ 'path': `./data/screenshot_${userTwitch}_${actualDate}.jpg`, 'fullPage': true });
+        }
         page.on('console', consoleObj => console.log(consoleObj.text()));
         let viewerData = await page.evaluate(async () => {
             let element = document.querySelector('.tw-stat__value')

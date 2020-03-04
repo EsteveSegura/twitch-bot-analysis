@@ -19,4 +19,12 @@ function writeJsonFile(path,data){
     });  
 }
 
-module.exports = { readJsonFile, writeJsonFile };
+function writeCsvFile(path,data){
+    return new Promise((resolve,reject) =>{
+        fs.writeFile(path, data, () => {
+            resolve(true)
+        }) 
+    })
+}
+
+module.exports = { readJsonFile, writeJsonFile, writeCsvFile };
